@@ -4,14 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,400;0,700;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Inria+Sans:ital,wght@0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
     <title>Alvin Febrianto</title>
   </head>
@@ -21,29 +15,37 @@
         <h1>Liverpool FC</h1>
         <p>The Most Successful English Football Clubs in History</p>
         <a href="https://www.liverpoolfc.com" target="_blank">
-          <img
-            src="image/LFC_logo.webp"
-            title="Website Resmi Liverpool FC"
-            width="300px"
-            alt="Logo Liverpool FC"
-          />
+          <img src="image/LFC_logo.webp" title="Website Resmi Liverpool FC" width="300px" alt="Logo Liverpool FC"/>
         </a>
       </div>
       <nav>
         <ul>
           <li>
             <a href="#">
-              <img
-                src="image/LFC_logo.webp"
-                width="25px"
-                alt="Logo Liverpool FC"
-              />
+              <img src="image/LFC_logo.webp" width="25px" alt="Logo Liverpool FC"/>
             </a>
           </li>
-          <li><a href="#sejarah">Sejarah</a></li>
+          <li class="dropdown">
+            <a href="#sejarah">Sejarah <span class="dropdown-indicator">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="#masa-awal">Masa awal dan pembentukan</a></li>
+              <li><a href="#masa-kejayaan">Masa kejayaan</a></li>
+              <li><a href="#shankly">Era Bill Shankly</a></li>
+              <li><a href="#paisley">Era Bob Paisley</a></li>
+              <li><a href="#fagan">Era Joe Fagan</a></li>
+              <li><a href="#dalglish">Era Kenny Dalglish</a></li>
+              <li><a href="#benitez">Era Rafael Benitez</a></li>
+              <li><a href="#klopp">Era Jürgen Klopp</a></li>
+            </ul>
+          </li>
           <li><a href="#anfield">Anfield</a></li>
           <li><a href="#prestasi">Prestasi</a></li>
-          <li><a id="switch" onclick="switch_mode()">Dark Mode</a></li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+          </li>
         </ul>
       </nav>
     </header>
@@ -110,7 +112,7 @@
         <article id="sejarah" class="card">
           <h2>Sejarah</h2>
           <section>
-            <h3>Masa awal dan pembentukan</h3>
+            <h3 id="masa-awal">Masa awal dan pembentukan</h3>
             <div class="sejarah">
               <div class="figur">
                 <img src="image/John_Houlding.jpg" alt="John Houlding" />
@@ -145,7 +147,7 @@
             </div>
           </section>
           <section>
-            <h3>Masa kejayaan</h3>
+            <h3 id="masa-kejayaan">Masa kejayaan</h3>
             <p>
               Liverpool meraih era terbaiknya saat dibawah manajer Bill Shankly.
               Pelatih ini kemudian menjadi legenda Liverpool. Ia sangat
@@ -157,7 +159,7 @@
               Neal, Kevin Keegan, Alan Hansen, Kenny Dalglish (102 cap), dan Ian
               Rush (346 gol)
             </p>
-            <h4>Era Bill Shankly</h4>
+            <h4 id="shankly">Era Bill Shankly</h4>
             <div class="sejarah-shankly">
               <p>
                 Setelah menjuarai Piala FA yang pertama pada tahun 1965 dan
@@ -182,7 +184,7 @@
                 <p>Patung Bill Shankly</p>
               </div>
             </div>
-            <h4>Era Bob Paisley</h4>
+            <h4 id="paisley">Era Bob Paisley</h4>
             <div class="sejarah-paisley">
               <div class="figur">
                 <img src="image/Bob_Paisley.jpg" alt="Bob Paisley" />
@@ -209,7 +211,7 @@
               </p>
               <p></p>
             </div>
-            <h4>Era Joe Fagan</h4>
+            <h4 id="fagan">Era Joe Fagan</h4>
             <p>
               Paisley pensiun pada tahun 1983 dan digantikan oleh asistennya Joe
               Fagan. Sebagai penerus Bob Paisley, Joe Fagan yang pada saat itu
@@ -219,7 +221,7 @@
               sebagai klub sepak bola pertama di Inggris yang berhasil meraih 3
               gelar juara sekaligus dalam 1 musim kompetisi.
             </p>
-            <h4>Era Kenny Dalglish</h4>
+            <h4 id="dalglish">Era Kenny Dalglish</h4>
             <p>
               Pada masa kepemimpinan Kenny Dalglish, Liverpool FC dibawa menjadi
               juara Liga Inggris sebanyak 3 kali dan juara Piala FA sebanyak 2
@@ -228,7 +230,7 @@
               bisa dipastikan Liverpool FC menjadi penantang serius untuk
               merebut Piala Champion pada saat itu.
             </p>
-            <h4>Era Rafael Benitez</h4>
+            <h4 id="benitez">Era Rafael Benitez</h4>
             <p>
               Rafael Benitez datang ke Liverpool setelah berhasil membawa
               Valencia menjadi juara Liga Spanyol 2 kali dan juara Piala UEFA.
@@ -248,7 +250,7 @@
               berhasil mengalahkan West Ham United dengan Steven Gerrard sebagai
               Man of the Match.
             </p>
-            <h4>Era Jürgen Klopp</h4>
+            <h4 id="klopp">Era Jürgen Klopp</h4>
             <div class="sejarah-klopp">
               <p>
                 Pada musim pertama, ia berhasil membawa Liverpool ke final Piala
@@ -359,6 +361,9 @@
     <footer>
       <p>Submission Dasar Pemrograman Web - Made with ❤ by Alvin Febrianto</p>
     </footer>
+    <button id="scrollToTopBtn" class="scroll-to-top" style="display: none">
+      ↑
+    </button>
     <script src="script.js"></script>
   </body>
 </html>

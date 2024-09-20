@@ -31,7 +31,7 @@ header {
   margin: -1rem 0 25px 0;
 }
 nav {
-  background-color: #be0714;
+  background-color: #ae0714;
   padding: 1px;
   position: sticky;
   top: 0;
@@ -40,17 +40,14 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 0 40px;
+  padding: 0 20px;
+  list-style-type: none;
 }
 nav li {
   display: inline;
-  list-style-type: none;
 }
 ul li:last-child {
   margin-left: auto;
-}
-#switch {
-  cursor: pointer;
 }
 nav a {
   font-size: 18px;
@@ -61,6 +58,50 @@ nav a {
 nav a:hover {
   color: #fe0000;
   font-weight: bold;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  display: block;
+}
+nav ul li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+nav ul li ul.dropdown-content li {
+  display: block;
+}
+nav ul li ul.dropdown-content li a {
+  padding: 10px;
+  width: 170px;
+  border-radius: 8px;
+  color: #000;
+}
+nav ul li:hover ul.dropdown-content {
+  display: block;
+}
+nav ul li a .dropdown-indicator {
+  font-size: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+nav ul li:hover a .dropdown-indicator {
+  transform: rotate(180deg);
+}
+nav ul li ul.dropdown-content li a:hover {
+  background-color: #ddd;
+  color: #000;
 }
 main {
   display: flex;
@@ -70,6 +111,7 @@ main {
 #content {
   width: 75%;
   padding-left: 20px;
+  margin-bottom: 1rem;
 }
 .aside-container {
   display: flex;
@@ -125,7 +167,6 @@ article figure figcaption {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   padding: 0.25rem;
@@ -171,11 +212,70 @@ footer {
   font-weight: bold;
 }
 .dark-main {
-  background-color: #1f1f1f;
-  color: rgb(255, 225, 225);
+  background-color: #282828;
+  color: #ccc;
 }
 .dark-card {
-  box-shadow: 0 5px 3px 0 rgb(211, 90, 90);
+  box-shadow: 0 6px 6px 0 #dc0714;
+  background-color: #383838;
+  color: #ccc;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #2196f3;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  z-index: 1000;
+  font-size: 24px;
+  background-color: #dc0714;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+.scroll-to-top:hover {
+  background-color: #a0050d;
 }
 
 @media screen and (max-width: 1000px) {
